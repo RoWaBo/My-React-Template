@@ -13,7 +13,13 @@ const font = {
         medium: "500",
         regular: "400",
         light: "300"
-    }
+    },
+    letterSpacing: {
+        l: "3px",
+        m: "2px",
+        s: "1px"
+    },
+    lineHeight: "1.5"
 }
 
 export default font
