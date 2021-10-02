@@ -3,7 +3,8 @@ import { Global, css } from "@emotion/react";
 
 const GlobalStyle = () => {
 
-    const globalStyles = ({ font }) => css`
+    const globalStyles = ({ colors, font }) => css`
+    
         @import url(${font.fontImportUrl});
 
         * {
@@ -20,10 +21,13 @@ const GlobalStyle = () => {
         }
         a {
             text-decoration: none;
-            color: black;
+            color: ${colors.font.primary};
         }
         ul {
             list-style: none;
+        }
+        body {
+            background-color: ${colors.background.primary};
         } 
     `
 
