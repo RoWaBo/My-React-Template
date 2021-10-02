@@ -1,10 +1,9 @@
 import { Global, css } from "@emotion/react";
 /** @jsxImportSource @emotion/react */
-import { font } from "./Styles";
 
 const GlobalStyle = () => {
 
-    const globalStyles = css`
+    const globalStyles = ({ font }) => css`
         @import url(${font.fontImportUrl});
 
         * {

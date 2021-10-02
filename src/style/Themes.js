@@ -4,7 +4,6 @@ export const lightTheme = {
         primary: "#FF1168",
         secondary: "#341931",
         additional: "#111625",
-        gradient: "linear-gradient(266deg, rgba(255,106,0,1) 0%, rgba(238,9,121,1) 100%)",
         background: {
             primary: "#FFF",
             secondary: "#FFF",
@@ -22,7 +21,6 @@ export const darkTheme = {
         primary: "#FF1168",
         secondary: "#341931",
         additional: "#111625",
-        gradient: "linear-gradient(266deg, rgba(255,106,0,1) 0%, rgba(238,9,121,1) 100%)",
         background: {
             primary: "#341931",
             secondary: "#111625",

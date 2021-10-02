@@ -1,18 +1,21 @@
 import { Router } from "@reach/router";
+// VIEWS
 import Home from './views/Home';
 import Contact from './views/Contact';
+// COMPONENTS
 import NavBar from "./components/NavBar";
-import GlobalStyle from "./style/Global";
+// CONTEXT
 import ThemeProvider from "./contexts/ThemeProvider";
 import ThemeContextProvider from "./contexts/ThemeContext";
-
+// STYLE
+import GlobalStyle from "./style/Global";
 
 function App() {
   return (
     <>
-      <GlobalStyle />
       <ThemeContextProvider>
         <ThemeProvider>
+          <GlobalStyle />
           <NavBar />
           <Router>
             <Home path="/" />
