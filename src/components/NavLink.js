@@ -1,27 +1,16 @@
 import { Link } from "@reach/router";
-import { css } from "@emotion/react";
-import { useState } from "react";
-/** @jsxImportSource @emotion/react */
+import { useTheme } from "@emotion/react";
 
 const NavLink = props => {
 
-    const [isActive, setIsActive] = useState()
-
-
-    const active = ({ colors }) => css`
-        color: ${colors.highlight};
-    `
-    const passive = ({ colors }) => css`
-        color: ${colors.font.primary};
-    `
-
+    const theme = useTheme()
 
     return (
-        <Link
-            {...props}
-            getProps={({ isCurrent }) => setIsActive(isCurrent)}
-            css={isActive ? active : passive}
-        />
+        <Link {...props} getProps={({ isCurrent }) => {
+            return {
+                style: { color: isCurrent ? theme.colors.highlight : theme.colors.font.primary }
+            }    
+        }}/>
     );
 }
 
