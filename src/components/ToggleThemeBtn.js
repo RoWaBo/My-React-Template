@@ -1,8 +1,8 @@
-import { useTheme } from "../contexts/ThemeContext";
+import { useThemeContext } from "../contexts/ThemeContext";
 
 const ToggleThemeBtn = ({ children }) => {
 
-    const { theme, setTheme } = useTheme();
+    const { theme, setTheme } = useThemeContext();
 
     const toggleTheme = () => {
         if (theme === "light") {

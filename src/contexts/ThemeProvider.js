@@ -1,12 +1,12 @@
 import { ThemeProvider } from "@emotion/react";
-import { useTheme } from "./ThemeContext";
+import { useThemeContext } from "./ThemeContext";
 import { darkTheme, lightTheme } from "../style/themes";
 import font from "../style/font";
 import spacing from "../style/spacing";
 
 const Theme = ({ children }) => {
 
-    const { theme: themeState } = useTheme()
+    const { theme: themeState } = useThemeContext()
 
     const themeSelector = () => {
         if (themeState === "light") return {...lightTheme, font, spacing} 
