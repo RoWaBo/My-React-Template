@@ -19,7 +19,7 @@ function App() {
         <ThemeProvider>
           <GlobalStyle />
           <NavBar />
-          <Wrapper>
+          <Wrapper maxWidth="600px">
             <Router>
               <Home path="/" />
               <Contact path="contact" />
