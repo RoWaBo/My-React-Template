@@ -1,5 +1,6 @@
 import NavLink from "./NavLink";
 import { css } from "@emotion/react";
+import { LightenDarkenColor } from "../helperFunctions";
 /** @jsxImportSource @emotion/react */
 
 const NavBar = () => {
@@ -21,6 +22,13 @@ const NavBar = () => {
             font-size: ${font.size.l};
             font-weight: ${font.weight.regular};
             color: ${colors.font.primary};
+
+            & > * {
+                transition: color .2s ease-out;    
+            }
+            &:hover > * {
+                color: ${colors.primary};
+            }
         }
 
     `
