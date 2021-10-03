@@ -1,12 +1,12 @@
 import { useThemeContext } from "../contexts/ThemeContext";
-import { css } from "@emotion/react";
-/** @jsxImportSource @emotion/react */
+import Button from "./Button";
 
 const ToggleThemeBtn = ({ children }) => {
 
     const { theme, setTheme } = useThemeContext();
 
     const toggleTheme = () => {
+
         if (theme === "light") {
             setTheme("dark")
             localStorage.setItem("theme", "dark")
@@ -16,18 +16,7 @@ const ToggleThemeBtn = ({ children }) => {
         }        
     }
 
-    // STYLE
-    const style = ({ colors, font, spacing }) => css`
-        padding: ${spacing.xs};
-        font-size: ${font.size.m};
-        background-color: ${colors.primary};
-        color: ${colors.font.secondary};
-        text-transform: uppercase;
-        border: none;
-        border-radius: 5px;
-    `
-
-    return ( <button onClick={toggleTheme} css={style}>{ children }</button> );
+    return ( <Button onClick={toggleTheme}>{ children }</Button> );
 }
  
 export default ToggleThemeBtn;
