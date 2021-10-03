@@ -10,6 +10,10 @@ const Wrapper = ({ children }) => {
                 align-items: center;
                 flex-direction: column;
                 padding: ${spacing.m};
+
+                & > * {
+                    max-width: 600px;    
+                }
                 `
             }
         >
