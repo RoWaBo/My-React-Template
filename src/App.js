@@ -18,7 +18,7 @@ function App() {
       <ThemeContextProvider>
         <ThemeProvider>
           <GlobalStyle />
-          <NavBar />
+          <NavBar shadow />
           <Wrapper maxWidth="600px">
             <Router>
               <Home path="/" />

@@ -1,13 +1,13 @@
 import NavLink from "./NavLink";
 import { css } from "@emotion/react";
-import { LightenDarkenColor } from "../helperFunctions";
 /** @jsxImportSource @emotion/react */
 
-const NavBar = () => {
+const NavBar = ({ shadow }) => {
 
     const style = ({ colors, font, spacing }) => css`
         width: 100%;
-        padding: ${spacing.s} ${spacing.m};
+        padding: ${spacing.m};
+        ${shadow && `box-shadow: rgba(149, 157, 165, 0.15) 0px 8px 20px;`}; 
 
         & ul {
             display: flex;
@@ -38,6 +38,9 @@ const NavBar = () => {
             <ul>
                 <li>
                     <NavLink to="/">Home</NavLink>
+                </li>
+                <li>
+                    <NavLink to="/about">About</NavLink>
                 </li>
                 <li>
                     <NavLink to="/contact">Contact</NavLink>
