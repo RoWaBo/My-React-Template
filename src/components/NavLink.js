@@ -8,7 +8,7 @@ const NavLink = props => {
     return (
         <Link {...props} getProps={({ isCurrent }) => {
             return {
-                style: { color: isCurrent ? theme.colors.highlight : theme.colors.font.primary }
+                style: { borderBottom: isCurrent && `solid 2px ${theme.colors.primary}`}
             }    
         }}/>
     );
