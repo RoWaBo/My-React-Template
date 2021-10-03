@@ -1,7 +1,8 @@
 import { css } from "@emotion/react";
 /** @jsxImportSource @emotion/react */
+import PropTypes from 'prop-types';
 
-const Wrapper = ({ children }) => {
+const Wrapper = ({ children, maxWidth }) => {
 
     return (
         <main 
@@ -12,7 +13,7 @@ const Wrapper = ({ children }) => {
                 padding: ${spacing.m};
 
                 & > * {
-                    max-width: 600px;    
+                    ${maxWidth && `max-width: ${maxWidth};`};   
                 }
                 `
             }
@@ -20,6 +21,10 @@ const Wrapper = ({ children }) => {
             { children }
         </main>
     ); 
+}
+
+Wrapper.propTypes = {
+    maxWidth: PropTypes.string
 }
  
 export default Wrapper;
