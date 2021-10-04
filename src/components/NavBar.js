@@ -1,17 +1,21 @@
 import NavLink from "./NavLink";
 import { css } from "@emotion/react";
 /** @jsxImportSource @emotion/react */
+import { mq } from '../style/mediaQueryBreakPoints';
 
 const NavBar = ({ shadow }) => {
 
     const style = ({ colors, font, spacing }) => css`
         width: 100%;
+        display: flex;
+        justify-content: center;
         padding: ${spacing.m};
         ${shadow && `box-shadow: rgba(149, 157, 165, 0.15) 0px 8px 20px;`}; 
 
         & ul {
+            ${spacing.gutterWidth.maxWidth}
             display: flex;
-            justify-content: space-around; 
+            justify-content: space-between; 
 
             & > * + * {
                 margin-left: ${spacing.l};

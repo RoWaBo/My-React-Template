@@ -13,7 +13,7 @@ const Wrapper = ({ children, maxWidth }) => {
                 padding: ${spacing.m};
 
                 & > * {
-                    ${maxWidth && `max-width: ${maxWidth};`};   
+                    ${maxWidth && spacing.gutterWidth};   
                 }
                 `
             }

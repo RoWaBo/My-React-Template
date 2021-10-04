@@ -16,7 +16,7 @@ const Button = (props) => {
         transition: background-color .2s ease-out;
 
         &:hover {
-            background-color: ${LightenDarkenColor(colors.primary, -20)}
+            background-color: ${LightenDarkenColor(colors.primary, -30)}
         }
 
         & > * {
