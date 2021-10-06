@@ -14,6 +14,11 @@ const font = {
         regular: "400",
         light: "300"
     },
+    icon: {
+        l: "2rem",
+        m: "1.5rem",
+        s: "1rem"    
+    },
     letterSpacing: {
         l: "3px",
         m: "2px",

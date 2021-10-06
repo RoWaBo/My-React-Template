@@ -10,10 +10,10 @@ const Wrapper = ({ children, maxWidth }) => {
                 display: flex;
                 align-items: center;
                 flex-direction: column;
-                padding: ${spacing.m};
+                padding: ${spacing.wrapping};
 
                 & > * {
-                    ${maxWidth && spacing.gutterWidth};   
+                    ${maxWidth && `max-width: ${spacing.contentWidth};`};   
                 }
                 `
             }

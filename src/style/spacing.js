@@ -1,4 +1,3 @@
-import { mq } from '../style/mediaQueryBreakPoints';
 
 const spacing = {
     xxs: "0.2rem",
@@ -8,9 +7,8 @@ const spacing = {
     l: "2rem",
     xl: "2.5rem",
     xxl: "5rem",
-    gutterWidth: mq({
-        maxWidth: ["400px", "600px", "1100px"]
-    })
+    contentWidth: "1200px",
+    wrapping: "1.5rem"
 }
 
 export default spacing
