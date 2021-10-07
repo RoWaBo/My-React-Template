@@ -5,6 +5,7 @@ import { useTheme } from "@emotion/react";
 import { AiOutlineMenu } from 'react-icons/ai';
 import { GrClose } from 'react-icons/gr';
 import { useState } from "react";
+import ToggleThemeBtn from "./ToggleThemeBtn";
 /** @jsxImportSource @emotion/react */
 
 const NavBar = ({ shadow }) => {
@@ -43,6 +44,11 @@ const NavBar = ({ shadow }) => {
         }
     `
 
+    const toggleThemeBtnContainer = css`
+        margin-left: auto;
+        padding-left: ${spacing.l};
+    `
+
     const menuIconContainer = css`
         position: absolute;
         padding: ${spacing.wrapping};
@@ -67,7 +73,8 @@ const NavBar = ({ shadow }) => {
     const list = css`
         width: ${width > breakPoints.desktop ? spacing.contentWidth : "100%"};
         display: flex;
-        justify-content: space-between; 
+        justify-content: space-between;
+        margin-left: auto;
 
         & > * + * {
             margin-left: ${spacing.l};
@@ -109,6 +116,9 @@ const NavBar = ({ shadow }) => {
                         <NavLink to="/contact">Contact</NavLink>
                     </li>
                 </ul>
+                <div css={toggleThemeBtnContainer}>
+                    <ToggleThemeBtn>change theme</ToggleThemeBtn>
+                </div>
             </nav>
         </>
     );

@@ -4,7 +4,6 @@ import Home from './views/Home';
 import Contact from './views/Contact';
 // COMPONENTS
 import NavBar from "./components/NavBar";
-import ToggleThemeBtn from "./components/ToggleThemeBtn";
 // CONTEXT
 import ThemeProvider from "./contexts/ThemeProvider";
 import ThemeContextProvider from "./contexts/ThemeContext";
@@ -24,7 +23,6 @@ function App() {
               <Home path="/" />
               <Contact path="contact" />
             </Router>
-            <ToggleThemeBtn>change theme</ToggleThemeBtn>
           </Wrapper>
         </ThemeProvider>
       </ThemeContextProvider>

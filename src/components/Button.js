@@ -5,6 +5,7 @@ import { LightenDarkenColor } from "../helperFunctions";
 const Button = (props) => {
 
     const style = ({ colors, font, spacing }) => css`
+        width: max-content;
         padding: ${spacing.xs};
         font-size: ${font.size.m};
         background-color: ${colors.primary};
