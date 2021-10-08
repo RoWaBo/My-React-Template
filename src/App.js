@@ -18,7 +18,7 @@ function App() {
         <ThemeProvider>
           <GlobalStyle />
           <NavBar shadow />
-          <Container maxWidth as="main">
+          <Container contentWidth as="main">
             <Router>
               <Home path="/" />
               <Contact path="contact" />

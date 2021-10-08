@@ -2,6 +2,7 @@ import { useThemeContext } from "../contexts/ThemeContext";
 import Button from "./Button";
 import { FiMoon, FiSun } from 'react-icons/fi';
 import { useTheme } from "@emotion/react";
+import { LightenDarkenColor } from "../helperFunctions";
 
 const ToggleThemeBtn = () => {
 
@@ -20,9 +21,10 @@ const ToggleThemeBtn = () => {
 
     // === STYLING ===
     const buttonStyle = {
+        padding: '.5rem',
         display: 'grid',
         placeContent: 'center',
-        backgroundColor: colors.light
+        backgroundColor: theme === "light" ? colors.light : LightenDarkenColor(colors.background.primary, 40)  
     }
 
     const iconStyle = {

@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import styled from "@emotion/styled";
 import { useTheme } from "@emotion/react";
 
-const Container = ({ children, maxWidth, as }) => {
+const Container = ({ children, contentWidth, as, width }) => {
 
     const { spacing } = useTheme()
 
@@ -13,7 +13,8 @@ const Container = ({ children, maxWidth, as }) => {
         padding: ${spacing.wrapping};
 
         & > * {
-            ${maxWidth && `max-width: ${spacing.contentWidth};`};   
+            ${contentWidth && `max-width: ${spacing.contentWidth};`};   
+            ${width && `max-width: ${width};`};   
         }    
     `
 
@@ -21,8 +22,9 @@ const Container = ({ children, maxWidth, as }) => {
 }
 
 Container.propTypes = {
-    maxWidth: PropTypes.bool,
-    as: PropTypes.string
+    contentWidth: PropTypes.bool,
+    as: PropTypes.string,
+    width: PropTypes.string
 }
 
 export default Container;

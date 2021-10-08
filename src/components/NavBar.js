@@ -103,7 +103,7 @@ const NavBar = ({ shadow }) => {
     `
 
     return (
-        <Container maxWidth as="header">
+        <Container contentWidth as="header">
             {isMenuOpen && <div css={layerStyle} onClick={toggleMobileMenu}></div>}
             <nav css={navBarStyle}>
                 {width < breakPoints.mobile && (
