@@ -1,5 +1,6 @@
-import NavLink from "./NavLink";
+/** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react";
+import NavLink from "./NavLink";
 import useWindowSize from "../hooks/useWindowSize";
 import { useTheme } from "@emotion/react";
 import { AiOutlineMenu } from 'react-icons/ai';
@@ -7,7 +8,6 @@ import { GrClose } from 'react-icons/gr';
 import { useState } from "react";
 import ToggleThemeBtn from "./ToggleThemeBtn";
 import Container from './Container';
-/** @jsxImportSource @emotion/react */
 
 const NavBar = ({ shadow }) => {
 
