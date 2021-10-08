@@ -9,7 +9,7 @@ import ThemeProvider from "./contexts/ThemeProvider";
 import ThemeContextProvider from "./contexts/ThemeContext";
 // STYLE
 import GlobalStyle from "./style/Global";
-import Wrapper from "./components/Wrapper";
+import Container from "./components/Container";
 
 function App() {
   return (
@@ -18,12 +18,12 @@ function App() {
         <ThemeProvider>
           <GlobalStyle />
           <NavBar shadow />
-          <Wrapper maxWidth="600px">
+          <Container maxWidth as="main">
             <Router>
               <Home path="/" />
               <Contact path="contact" />
             </Router>
-          </Wrapper>
+          </Container>
         </ThemeProvider>
       </ThemeContextProvider>
     </>

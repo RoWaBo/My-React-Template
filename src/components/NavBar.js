@@ -6,6 +6,7 @@ import { AiOutlineMenu } from 'react-icons/ai';
 import { GrClose } from 'react-icons/gr';
 import { useState } from "react";
 import ToggleThemeBtn from "./ToggleThemeBtn";
+import Container from './Container';
 /** @jsxImportSource @emotion/react */
 
 const NavBar = ({ shadow }) => {
@@ -25,13 +26,14 @@ const NavBar = ({ shadow }) => {
     // VARIABLES
     const navBarHeight = "64px"
 
+    // === EMOTION STYLE ===
     const navBarStyle = css`
         width: 100%; 
         height: ${navBarHeight};
         display: flex;
         justify-content: center;
         align-items: center;
-        padding: ${spacing.wrapping};
+        
         overflow: hidden;
 
         & li {
@@ -75,7 +77,7 @@ const NavBar = ({ shadow }) => {
     `
 
     const listStyle = css`
-        width: ${width > breakPoints.desktop ? spacing.contentWidth : "100%"};
+        width: 100%;
         display: flex;
         justify-content: space-between;
         margin-left: auto;
@@ -101,7 +103,7 @@ const NavBar = ({ shadow }) => {
     `
 
     return (
-        <>
+        <Container maxWidth as="header">
             {isMenuOpen && <div css={layerStyle} onClick={toggleMobileMenu}></div>}
             <nav css={navBarStyle}>
                 {width < breakPoints.mobile && (
@@ -124,7 +126,7 @@ const NavBar = ({ shadow }) => {
                     <ToggleThemeBtn>change theme</ToggleThemeBtn>
                 </div>
             </nav>
-        </>
+        </Container>
     );
 }
 
