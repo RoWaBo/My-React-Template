@@ -1,8 +1,8 @@
 
 const breakPoints = {
-    mobile: "560",
-    tablet: "768",
-    desktop: "1024"
+    mobile: "600",
+    tablet: "900",
+    desktop: "1200"
 }
 
 export default breakPoints

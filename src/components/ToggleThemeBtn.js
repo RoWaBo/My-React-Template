@@ -24,12 +24,12 @@ const ToggleThemeBtn = () => {
         padding: '.5rem',
         display: 'grid',
         placeContent: 'center',
-        backgroundColor: theme === "light" ? colors.light : LightenDarkenColor(colors.background.primary, 40)  
+        backgroundColor: theme === "light" ? colors.grey.light : LightenDarkenColor(colors.background.primary, 40)  
     }
 
     const iconStyle = {
         fontSize: font.icon.m,
-        color: colors.font.primary    
+        color: colors.font.primary.main    
     }
 
     return ( 

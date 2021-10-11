@@ -39,13 +39,13 @@ const NavBar = ({ shadow }) => {
         & li {
             font-size: ${font.size.l};
             font-weight: ${font.weight.regular};
-            color: ${colors.font.primary};
+            color: ${colors.font.primary.main};
 
             & > * {
                 transition: color .2s ease-out;    
             }
             &:hover > * {
-                color: ${colors.primary};
+                color: ${colors.primary.main};
             }
         }
     `
@@ -62,7 +62,7 @@ const NavBar = ({ shadow }) => {
 
         & > * {
             font-size: ${font.icon.m};
-            color: ${colors.font.primary};    
+            color: ${colors.font.primary.main};    
         }
     `
 
@@ -91,7 +91,7 @@ const NavBar = ({ shadow }) => {
         top: ${navBarHeight};
         left: ${isMenuOpen ? "0" : "-70vw"}; 
         padding: ${spacing.wrapping};
-        background-color: ${colors.background.primary};
+        background-color: ${colors.background.primary.main};
         width: 70vw;
         height: 100vh;
         transition: all .4s;
