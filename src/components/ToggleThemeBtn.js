@@ -24,12 +24,7 @@ const ToggleThemeBtn = () => {
         padding: '.5rem',
         display: 'grid',
         placeContent: 'center',
-<<<<<<< HEAD
-        borderRadius: '50%',
-        backgroundColor: theme === "light" ? colors.light : LightenDarkenColor(colors.background.primary, 40)  
-=======
         backgroundColor: theme === "light" ? colors.grey.light : LightenDarkenColor(colors.background.primary, 40)  
->>>>>>> e5fc3d67dde4ea1894be1af2f59ad79755681803
     }
 
     const iconStyle = {
