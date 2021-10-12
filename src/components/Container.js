@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import styled from "@emotion/styled";
 import { useTheme } from "@emotion/react";
 
-const Container = ({ children, contentWidth, as, width }) => {
+const Container = ({ children, contentWidth, as, width, style }) => {
 
     const { spacing } = useTheme()
 
@@ -18,7 +18,7 @@ const Container = ({ children, contentWidth, as, width }) => {
         }    
     `
 
-    return <Container as={as}>{ children }</Container>
+    return <Container as={as} style={style}>{ children }</Container>
 }
 
 Container.propTypes = {

@@ -4,12 +4,11 @@ import NavLink from "./NavLink";
 import useWindowSize from "../hooks/useWindowSize";
 import { useTheme } from "@emotion/react";
 import { AiOutlineMenu } from 'react-icons/ai';
-import { GrClose } from 'react-icons/gr';
+import { IoMdClose } from 'react-icons/io';
 import { useState } from "react";
 import ToggleThemeBtn from "./ToggleThemeBtn";
-import Container from './Container';
 
-const NavBar = ({ shadow }) => {
+const NavBar = () => {
 
     // HOOKS
     const { width } = useWindowSize()
@@ -95,15 +94,26 @@ const NavBar = ({ shadow }) => {
         width: 70vw;
         height: 100vh;
         transition: all .4s;
-        ${shadow && `box-shadow: inset rgba(149, 157, 165, 0.15) 0px 8px 20px;`}; 
+        box-shadow: inset rgba(149, 157, 165, 0.15) 0px 8px 20px; 
         
         & > * + * {
             margin-top: ${spacing.l};
         }    
     `
+    const headerStyle = css`
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        padding: ${spacing.xs} ${spacing.wrapping};
+        box-shadow: rgba(149, 157, 165, 0.15) 0px 8px 20px;
+
+        & > * {
+            max-width: ${spacing.contentWidth};   
+        }    
+    `
 
     return (
-        <Container contentWidth as="header">
+        <header css={headerStyle}>
             {isMenuOpen && <div css={layerStyle} onClick={toggleMobileMenu}></div>}
             <nav css={navBarStyle}>
                 {width < breakPoints.mobile && (
@@ -114,7 +124,7 @@ const NavBar = ({ shadow }) => {
                 <ul css={width < breakPoints.mobile ? listMobileStyle : listStyle}>
                     {width < breakPoints.mobile && (
                         <li onClick={toggleMobileMenu} css={menuIconContainerStyle}>
-                            <GrClose />
+                            <IoMdClose />
                         </li>
                     )}
                     <li onClick={toggleMobileMenu}>
@@ -131,7 +141,7 @@ const NavBar = ({ shadow }) => {
                     <ToggleThemeBtn>change theme</ToggleThemeBtn>
                 </div>
             </nav>
-        </Container>
+        </header>
     );
 }
 
