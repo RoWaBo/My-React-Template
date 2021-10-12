@@ -24,6 +24,7 @@ const ToggleThemeBtn = () => {
         padding: '.5rem',
         display: 'grid',
         placeContent: 'center',
+        borderRadius: '50%',
         backgroundColor: theme === "light" ? colors.light : LightenDarkenColor(colors.background.primary, 40)  
     }
 
