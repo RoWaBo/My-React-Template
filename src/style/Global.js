@@ -39,6 +39,7 @@ const GlobalStyle = () => {
         p {
             font-size: ${font.size.m};
             font-weight: ${font.weight.regular};
+            color: ${colors.font.secondary};
         } 
     `
 
