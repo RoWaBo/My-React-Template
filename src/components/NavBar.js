@@ -19,10 +19,10 @@ const NavBar = ({ shadow }) => {
     //  FUNCTIONS
     const toggleMobileMenu = () => {
         if (width < breakPoints.mobile) {
-            isMenuOpen ? setIsMenuOpen(false) : setIsMenuOpen(true)    
-        }  
+            isMenuOpen ? setIsMenuOpen(false) : setIsMenuOpen(true)
+        }
     }
-    
+
     // VARIABLES
     const navBarHeight = "64px"
 
@@ -33,19 +33,18 @@ const NavBar = ({ shadow }) => {
         display: flex;
         justify-content: center;
         align-items: center;
-        
         overflow: hidden;
 
         & li {
             font-size: ${font.size.l};
             font-weight: ${font.weight.regular};
-            color: ${colors.font.primary};
+            color: ${colors.font.primary.main};
 
             & > * {
                 transition: color .2s ease-out;    
             }
             &:hover > * {
-                color: ${colors.primary};
+                color: ${colors.primary.main};
             }
         }
     `
@@ -56,20 +55,20 @@ const NavBar = ({ shadow }) => {
     `
 
     const menuIconContainerStyle = css`
-        position: absolute;
-        padding: ${spacing.wrapping};
-        left: 0;
+        display: grid;
+        place-content: center;
+        width: fit-content;
 
         & > * {
-            font-size: ${font.icon.m};
-            color: ${colors.font.primary};    
+            font-size: ${font.icon.l};
+            color: ${colors.font.primary.main};    
         }
     `
 
     const layerStyle = css`
         background-color: rgba(0, 0, 0, 0.6);
         position: absolute;
-        top: ${navBarHeight};
+        top: 0;
         bottom: 0;
         left: 0;
         right: 0;
@@ -88,10 +87,11 @@ const NavBar = ({ shadow }) => {
     `
     const listMobileStyle = css`
         position: absolute;
-        top: ${navBarHeight};
+        z-index: 10;
+        top: 0;
         left: ${isMenuOpen ? "0" : "-70vw"}; 
         padding: ${spacing.wrapping};
-        background-color: ${colors.background.primary};
+        background: ${colors.background.primary};
         width: 70vw;
         height: 100vh;
         transition: all .4s;
@@ -108,10 +108,15 @@ const NavBar = ({ shadow }) => {
             <nav css={navBarStyle}>
                 {width < breakPoints.mobile && (
                     <div onClick={toggleMobileMenu} css={menuIconContainerStyle}>
-                        {isMenuOpen ? <GrClose /> : <AiOutlineMenu />}
+                        <AiOutlineMenu />
                     </div>
                 )}
                 <ul css={width < breakPoints.mobile ? listMobileStyle : listStyle}>
+                    {width < breakPoints.mobile && (
+                        <li onClick={toggleMobileMenu} css={menuIconContainerStyle}>
+                            <GrClose />
+                        </li>
+                    )}
                     <li onClick={toggleMobileMenu}>
                         <NavLink to="/">Home</NavLink>
                     </li >

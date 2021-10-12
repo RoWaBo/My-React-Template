@@ -1,9 +1,11 @@
-import { Global, css } from "@emotion/react";
+import { Global, css, useTheme } from "@emotion/react";
 /** @jsxImportSource @emotion/react */
 
 const GlobalStyle = () => {
 
-    const globalStyles = ({ colors, font }) => css`
+    const { colors, font, spacing, breakPoints } = useTheme()
+
+    const globalStyles = css`
 
         @import url(${font.fontImportUrl});
 
@@ -29,6 +31,14 @@ const GlobalStyle = () => {
         }
         body {
             background-color: ${colors.background.primary};
+        }
+        h1, h2, h3, h4 {
+            font-size: ${font.size.l};
+            font-weight: ${font.weight.regular};
+        }
+        p {
+            font-size: ${font.size.m};
+            font-weight: ${font.weight.regular};
         } 
     `
 
