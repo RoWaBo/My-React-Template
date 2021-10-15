@@ -24,7 +24,7 @@ const font = {
         m: "2px",
         s: "1px"
     },
-    lineHeight: "1.5"
+    lineHeight: "1.7"
 }
 
 export default font

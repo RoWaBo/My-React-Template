@@ -1,13 +1,13 @@
 import { css } from "@emotion/react";
-import { LightenDarkenColor } from "../helperFunctions";
 /** @jsxImportSource @emotion/react */
 
 const Button = (props) => {
 
     const style = ({ colors, font, spacing }) => css`
+        width: max-content;
         padding: ${spacing.xs};
         font-size: ${font.size.m};
-        background-color: ${colors.primary};
+        background-color: ${colors.primary.main};
         color: ${colors.font.secondary};
         text-transform: uppercase;
         border: none;
@@ -16,7 +16,7 @@ const Button = (props) => {
         transition: background-color .2s ease-out;
 
         &:hover {
-            background-color: ${LightenDarkenColor(colors.primary, -30)}
+            background-color: ${colors.primary.dark}
         }
 
         & > * {
